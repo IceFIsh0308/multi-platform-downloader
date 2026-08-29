@@ -82,21 +82,23 @@
       <span class="fs"><b>6</b> 粘贴链接下载</span>
     </div>
   </div>
-  <div class="sec-head">
-    <h2>🚀 详细部署流程</h2>
-    <div class="tabs">
-      <div class="tab active" data-tab="mac">🍎 macOS</div>
-      <div class="tab" data-tab="win">🪟 Windows</div>
-    </div>
-    <button class="dl-btn" id="pkgBtn" onclick="downloadPackage()">⬇️ 下载工具包</button>
-  </div>
 </div>
 
 <div class="wrap">
-  <div class="section"><div class="sec-body">
-    <div class="panel show" id="panel-mac"></div>
-    <div class="panel" id="panel-win"></div>
-  </div></div>
+  <div class="section">
+    <div class="sec-head" id="secHead">
+      <h2>🚀 详细部署流程</h2>
+      <div class="tabs">
+        <div class="tab active" data-tab="mac">🍎 macOS</div>
+        <div class="tab" data-tab="win">🪟 Windows</div>
+      </div>
+      <button class="dl-btn" id="pkgBtn" onclick="downloadPackage()">⬇️ 下载工具包</button>
+    </div>
+    <div class="sec-body">
+      <div class="panel show" id="panel-mac"></div>
+      <div class="panel" id="panel-win"></div>
+    </div>
+  </div>
 
   <div class="section"><div class="sec-body">
     <h2 style="font-size:17px;font-weight:700;margin-bottom:16px;">❓ 常见问题</h2>
@@ -396,7 +398,7 @@ function renderSteps(p) {
 function toggleStep(id) { document.getElementById('step-' + id).classList.toggle('open'); }
 function fixSecHead() {
   const sh = document.querySelector('.sticky-head');
-  const secHead = document.querySelector('.sec-head');
+  const secHead = document.getElementById('secHead');
   if (sh && secHead) secHead.style.top = sh.offsetHeight + 'px';
 }
 window.addEventListener('resize', fixSecHead);
